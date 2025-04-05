@@ -6,9 +6,9 @@ import Sidebar from "../components/Sidebar";
 
 // Sample Data: User's Items
 const fixedAssets = [
-  { id: 1, name: "Laptop", category: "Fixed", status: "Borrowed" },
-  { id: 2, name: "Projector", category: "Fixed", status: "Owned" },
-  { id: 3, name: "Printer", category: "Fixed", status: "Borrowed" },
+  { id: 1, name: "Laptop", category: "Fixed", status: "Borrowed", borrowDate: "2025-02-15", returnDate: "2025-03-15" },
+  { id: 2, name: "Projector", category: "Fixed", status: "Returned", borrowDate: "2025-01-20", returnDate: "2025-02-20" },
+  { id: 3, name: "Printer", category: "Fixed", status: "Borrowed", borrowDate: "2025-02-10", returnDate: "2025-03-10" },
 ];
 
 const consumableItems = [
@@ -37,6 +37,8 @@ const MyItems: React.FC = () => {
                   <th className="p-3">Item</th>
                   <th className="p-3">Category</th>
                   <th className="p-3">Status</th>
+                  <th className="p-3">Date of Borrow</th>
+                  <th className="p-3">Return Date</th>
                   <th className="p-3">Actions</th>
                 </tr>
               </thead>
@@ -45,7 +47,11 @@ const MyItems: React.FC = () => {
                   <tr key={item.id} className="border-t">
                     <td className="p-3">{item.name}</td>
                     <td className="p-3">{item.category}</td>
-                    <td className="p-3">{item.status}</td>
+                    <td className={`p-3 font-semibold ${item.status === "Borrowed" ? "text-green-600" : "text-gray-500"}`}>
+                      {item.status}
+                    </td>
+                    <td className="p-3">{item.borrowDate}</td>
+                    <td className="p-3">{item.status === "Borrowed" ? item.returnDate : "Returned"}</td>
                     <td className="p-3 flex space-x-2">
                       {/* Request Repair Button */}
                       <button
