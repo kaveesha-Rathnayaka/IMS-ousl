@@ -5,8 +5,8 @@ import Sidebar from "../components/Sidebar";
 
 const ProfileSettings: React.FC = () => {
   const [user, setUser] = useState({
-    name: "John Doe",
-    email: "user@university.com",
+    name: "Sunil perera",
+    email: "user@ousl.lk",
     role: "Staff",
     password: "",
     confirmPassword: "",

@@ -1,3 +1,4 @@
+// HomePage.tsx
 import React from "react";
 import { useNavigate } from "react-router-dom";
 import universityLogo from "../assets/open-university-logo.jpg";
@@ -6,7 +7,11 @@ const HomePage: React.FC = () => {
   const navigate = useNavigate();
 
   const handleRoleSelection = (role: string) => {
-    navigate("/register", { state: { role } });
+    if (role === "Admin") {
+      navigate("/admin-login");
+    } else if (role === "Staff") {
+      navigate("/");
+    }
   };
 
   return (
@@ -19,28 +24,22 @@ const HomePage: React.FC = () => {
         Welcome to the OUSL Inventory Management System
       </h1>
       <p className="text-sm text-gray-600 text-center mb-8">
-        Please select your role to proceed with registration
+        Please select your role to login
       </p>
 
       {/* Role Buttons */}
-      <div className="grid grid-cols-1 md:grid-cols-3 gap-6 w-full max-w-lg">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6 w-full max-w-md">
         <button
           onClick={() => handleRoleSelection("Staff")}
           className="bg-orange-500 hover:bg-orange-600 text-white py-3 rounded-lg shadow text-lg"
         >
-          👨‍💼 Staff
+          👨‍💼 Staff Login
         </button>
         <button
           onClick={() => handleRoleSelection("Admin")}
           className="bg-blue-500 hover:bg-blue-600 text-white py-3 rounded-lg shadow text-lg"
         >
-          🛠️ Admin
-        </button>
-        <button
-          onClick={() => handleRoleSelection("HOD")}
-          className="bg-green-500 hover:bg-green-600 text-white py-3 rounded-lg shadow text-lg"
-        >
-          🧑‍🏫 Head of Department
+          🛠️ Admin Login
         </button>
       </div>
 

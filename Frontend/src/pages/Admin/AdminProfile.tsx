@@ -8,7 +8,7 @@ import defaultAvatar from "../../assets/default-avatar.png"; // Add a placeholde
 const AdminProfile: React.FC = () => {
   const navigate = useNavigate();
   const [admin, setAdmin] = useState({
-    name: "John Doe",
+    name: "Sunil perera",
     email: "admin@university.com",
     role: "Administrator",
     password: "",

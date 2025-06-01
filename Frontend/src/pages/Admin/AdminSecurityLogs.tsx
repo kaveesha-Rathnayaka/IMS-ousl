@@ -38,13 +38,13 @@ const SecurityLogs: React.FC = () => {
               </thead>
               <tbody>
                 <tr className="border-t">
-                  <td className="p-3">John Doe</td>
+                  <td className="p-3">Sunil</td>
                   <td className="p-3">Approved Request</td>
                   <td className="p-3">2025-03-01</td>
                   <td className="p-3 text-green-600">✅ Success</td>
                 </tr>
                 <tr className="border-t">
-                  <td className="p-3">Jane Doe</td>
+                  <td className="p-3">Nimal</td>
                   <td className="p-3">Login Attempt</td>
                   <td className="p-3">2025-03-02</td>
                   <td className="p-3 text-red-600">⚠️ Failed</td>
